@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field-Multiline-Input</title>
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+  <script src="./index.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    #blocklyDiv {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="blocklyDiv"></div>
+  <script>
+    const toolbox = `
+      <xml>
+        <category name="My Block" colour="#9C27B0">
+          <block type="multiple_line_input_in"></block>
+          <block type="multiple_line_input_out"></block>
+        </category>
+      </xml>
+    `;
+
+    const workspace = Blockly.inject('blocklyDiv', {
+      toolbox: toolbox,
+      scrollbars: false,
+    });
+
+    var y = 25;
+    var x = 25;
+    var spacing = 25;
+
+    const block_in = workspace.newBlock('multiple_line_input_in');
+    block_in.initSvg();
+    block_in.render();
+    const block_in_height = block_in.getHeightWidth().height; 
+    block_in.moveBy(x, y);
+    y += block_in_height + spacing; 
+
+    const block_out = workspace.newBlock('multiple_line_input_out');
+    block_out.initSvg();
+    block_out.render();
+    const block_out_height = block_out.getHeightWidth().height;
+    block_out.moveBy(x, y);
+    y += block_out_height + spacing;
+
+  </script>
+</body>
+
+</html>

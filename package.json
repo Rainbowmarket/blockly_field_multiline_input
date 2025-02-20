@@ -1,0 +1,60 @@
+{
+  "name": "@rainbowmarket/blockly_field_multiline_input",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "unpkg": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "blockly-scripts build",
+    "build-nolint": "blockly-scripts build --skip-lint",
+    "clean": "blockly-scripts clean",
+    "lint": "blockly-scripts lint",
+    "predeploy": "blockly-scripts predeploy",
+    "prepublishOnly": "npm run clean && npm run build-nolint",
+    "start": "blockly-scripts start --skip-lint",
+    "test": "blockly-scripts test"
+  },
+  "keywords": [
+    "blockly",
+    "blockly-plugin"
+  ],
+  "author": "Naveen",
+  "license": "MIT",
+  "homepage": "https://github.com/rainbowmarket/blockly_field_multiline_input",
+  "bugs": {
+    "url": "https://github.com/rainbowmarket/blockly_field_multiline_input/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainbowmarket/blockly_field_multiline_input.git"
+  },
+  "directories": {
+    "dist": "dist",
+    "src": "src"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "@blockly/dev-scripts": "^4.0.7",
+    "@blockly/dev-tools": "^7.0.2"
+  },
+  "peerDependencies": {
+    "blockly": ">=10.0.0"
+  },
+  "eslintConfig": {
+    "extends": "@blockly/eslint-config"
+  },
+  "engines": {
+    "node": ">=8.17.0"
+  },
+  "browserslist": [
+    "defaults",
+    "IE 11",
+    "IE_Mob 11"
+  ],
+  "packageManager": "yarn@1.22.22"
+}
