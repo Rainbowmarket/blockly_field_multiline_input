@@ -24,23 +24,27 @@ export class FieldMultilineInput extends Blockly.FieldTextInput {
   }
 
   toXml(fieldElement) {
+    console.log("toXml.fieldElement: ", this.getValue());
     fieldElement.textContent = this.getValue().replace(/\n/g, '&#10;');
     return fieldElement;
   }
 
   fromXml(fieldElement) {
     this.setValue(fieldElement.textContent.replace(/&#10;/g, '\n'));
+    console.log("fromXml.fieldElement: ", this.getValue());
   }
 
   saveState() {
     const legacyState = this.saveLegacyState(FieldMultilineInput);
     if (legacyState !== null) {
+      console.log("saveState.legacyState: ", legacyState);
       return legacyState;
     }
     return this.getValue();
   }
 
   loadState(state) {
+    console.log("loadState.state: ", state)
     if (this.loadLegacyState(Blockly.Field, state)) {
       return;
     }
@@ -62,6 +66,7 @@ export class FieldMultilineInput extends Blockly.FieldTextInput {
       throw new Error('The field has not yet been attached to its input. Call appendField to attach it.');
     }
     let textLines = this.getText();
+    console.log("getDisplayText_.textLines: ", textLines);
     if (!textLines) {
       return Blockly.Field.NBSP;
     }

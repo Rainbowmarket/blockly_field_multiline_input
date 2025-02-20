@@ -1,10 +1,11 @@
 import * as Blockly from 'blockly/core';
+import {pythonGenerator, Order} from 'blockly/python';
 
-Blockly.Python['multiple_line_input_in'] = function (block) {
+pythonGenerator.forBlock['multiple_line_input_in'] = function (block) {
     const text = block.getFieldValue('TEXT');
-    return [`'''${text.replace(/'''/g, "\\'''")}'''`, Blockly.Python.ORDER_ATOMIC];
+    return [`'''${text.replace(/'''/g, "\\'''")}'''`, Order.ATOMIC];
 };
-Blockly.Python['multiple_line_input_out'] = function (block) {
+pythonGenerator.forBlock['multiple_line_input_out'] = function (block) {
     const text = block.getFieldValue('TEXT');
     return `'''${text.replace(/'''/g, "\\'''")}'''`;
 };

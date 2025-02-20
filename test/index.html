@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Field-Multiline-Input</title>
   <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+  <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/python_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/dart_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/php_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/lua_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/msg/en.js"></script>
   <script src="./index.js"></script>
   <style>
     html,
@@ -55,7 +63,7 @@
     const block_out_height = block_out.getHeightWidth().height;
     block_out.moveBy(x, y);
     y += block_out_height + spacing;
-
+    // javascript.javascriptGenerator.workspaceToCode(workspace);
   </script>
 </body>
 
